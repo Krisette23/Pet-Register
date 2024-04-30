@@ -10,7 +10,7 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
-                <MenuItem Header="Exit" Command="{Binding ExitCommand}"/>
+                <MenuItem Header="Exit" Click ="MenuItem_Click"/>
             </MenuItem>
             <MenuItem Header="HostName"/>
         </Menu>
