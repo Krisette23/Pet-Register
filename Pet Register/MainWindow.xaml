@@ -1,0 +1,55 @@
+﻿<Window x:Class="Pet_Register.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pet_Register"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="600">
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Exit" Command="{Binding ExitCommand}"/>
+            </MenuItem>
+            <MenuItem Header="HostName"/>
+        </Menu>
+        <!-- Status Bar -->
+        <StatusBar DockPanel.Dock="Bottom" Background="AliceBlue">
+            <StatusBarItem>
+                <TextBlock Name="StatBarText" Text="Ready"/>
+            </StatusBarItem>
+        </StatusBar>
+
+        <Grid DockPanel.Dock="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+      
+            <!-- Elements in the Grid -->
+            <Label  HorizontalAlignment ="Center"  Grid.Row ="0" Grid.Column="0" FontSize="15"  Content="Registration Number"/>
+            <TextBox HorizontalAlignment ="Center" Grid.Row ="1"  Grid.Column="0" FontSize="15" Height="20"  Width="67" />
+
+            <Label  HorizontalAlignment ="Center"  Grid.Row ="2" Grid.Column="0" FontSize="15"  Content="Type"/>
+            <ComboBox HorizontalAlignment ="Center"  Grid.Row ="3"  Grid.Column="0"  FontSize="15" Height="20"  Width="67"/>
+
+            <Label HorizontalAlignment ="Center" Grid.Row ="4" Grid.Column="0" FontSize="15"   Content="Race"/>
+            <TextBox  HorizontalAlignment ="Center" Grid.Row ="5" Grid.Column="0" FontSize="15" Height="20"  Width="67"/>
+
+            <Label HorizontalAlignment ="Center" Grid.Row ="6" Grid.Column="0" FontSize="15" Content="Description"/>
+            <TextBox  HorizontalAlignment ="Center" Grid.Row ="7"  Grid.Column="0"  FontSize="15" Height="20"  Width="67" />
+
+        </Grid>
+
+
+    </DockPanel>
+
+</Window>
