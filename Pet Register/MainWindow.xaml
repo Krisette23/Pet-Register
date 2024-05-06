@@ -31,6 +31,8 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
       
@@ -46,6 +48,9 @@
 
             <Label HorizontalAlignment ="Center" Grid.Row ="6" Grid.Column="0" FontSize="15" Content="Description"/>
             <TextBox  HorizontalAlignment ="Center" Grid.Row ="7"  Grid.Column="0"  FontSize="15" Height="20"  Width="67" />
+
+            
+            <Button HorizontalAlignment="Center" Grid.Row="9" FontSize="15" Content="Save" Click="Button_Click" />
 
         </Grid>
 
