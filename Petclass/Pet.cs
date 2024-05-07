@@ -4,24 +4,30 @@ namespace Petclass
 {
     public class Pet
     {
-        public string PetID { get; set; }
-        public  string PetName { get; set; }  
-        public  string PetType { get; set; }
-        public  string PetBreed { get; set; }
-        public  string PetDescription { get; set; }
+        public string petID { get; set; }
+        public  string petName { get; set; }  
+        public PetBreed petBreed { get; set; }
+        public  string petDescription { get; set; }
 
         public Pet()
         {
 
         }
-        public Pet (string petName, string petType, string petBreed)
+      
+        public enum PetBreed
         {
-
-         PetName = petName;
-         PetType = petType;
-         PetBreed = petBreed;   
-
-            
+            Dog,
+            Cat,
+            Bird,
+            Fish,
+            Rabbit,
+            Hamster,
+            GuineaPig,
+            Ferret,
+            Turtle,
+            Lizard,
+            Snake,
+            Spider,
         }
     }
 }
