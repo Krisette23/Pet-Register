@@ -27,7 +27,7 @@ namespace Petclass
             Turtle,
             Lizard,
             Snake,
-            Spider,
+            Spider
         }
     }
 }
