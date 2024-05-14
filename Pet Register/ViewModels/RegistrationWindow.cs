@@ -10,5 +10,7 @@ namespace Pet_Register.ViewModels
  public class RegistrationWindow
     {
 
+
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Petclass;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,6 +17,7 @@ namespace Pet_Register
     /// </summary>
     public partial class MainWindow : Window
     {
+        readonly IList<Pet> pets = new List<Pet>();
         public MainWindow()
         {
             InitializeComponent();

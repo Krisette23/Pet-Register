@@ -1,9 +1,8 @@
 ﻿<Window x:Class="Pet_Register.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Pet_Register"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="600">
 
@@ -21,7 +20,7 @@
             </StatusBarItem>
         </StatusBar>
 
-        <Grid DockPanel.Dock="Left">
+        <Grid DockPanel.Dock="Left" IsSharedSizeScope ="True">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
@@ -35,22 +34,46 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-      
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto" SharedSizeGroup="PetInfo" />
+
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="Registration Number"  FontSize="15" HorizontalAlignment ="Center"/>
+            </Grid>
+         
+
             <!-- Elements in the Grid -->
-            <Label  HorizontalAlignment ="Center"  Grid.Row ="0" Grid.Column="0" FontSize="15"  Content="Registration Number"/>
-            <TextBox HorizontalAlignment ="Center" Grid.Row ="1"  Grid.Column="0" FontSize="15" Height="20"  Width="67" />
+            <Grid Grid.Row="1" Name="PetDetails">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto" SharedSizeGroup="PetInfo" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+            </Grid>
+
+            <TextBox HorizontalAlignment ="Center" Grid.Row ="1"  Grid.Column="0" FontSize="15" Height="20"  Width="67" Text="{Binding Path= petID}" />
 
             <Label  HorizontalAlignment ="Center"  Grid.Row ="2" Grid.Column="0" FontSize="15"  Content="Type"/>
-            <ComboBox HorizontalAlignment ="Center"  Grid.Row ="3"  Grid.Column="0"  FontSize="15" Height="20"  Width="67"/>
+            <ComboBox HorizontalAlignment ="Center"  Grid.Row ="3"  Grid.Column="0"  FontSize="15" Height="20"  Width="67" Text="{Binding petType}"/>
 
             <Label HorizontalAlignment ="Center" Grid.Row ="4" Grid.Column="0" FontSize="15"   Content="Race"/>
-            <TextBox  HorizontalAlignment ="Center" Grid.Row ="5" Grid.Column="0" FontSize="15" Height="20"  Width="67"/>
+            <TextBox  HorizontalAlignment ="Center" Grid.Row ="5" Grid.Column="0" FontSize="15" Height="20"  Width="67"  Text="{Binding petBreed}"/>
 
             <Label HorizontalAlignment ="Center" Grid.Row ="6" Grid.Column="0" FontSize="15" Content="Description"/>
             <TextBox  HorizontalAlignment ="Center" Grid.Row ="7"  Grid.Column="0"  FontSize="15" Height="20"  Width="67" />
 
-            
-            <Button HorizontalAlignment="Center" Grid.Row="9" FontSize="15" Content="Save" Click="Button_Click" />
+            <StackPanel Grid.Row="8" HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button x:Name  ="btnAdd_Pet" HorizontalAlignment="Center" Grid.Row="9" FontSize="15" Content="Save" Margin="5,0,5,0" Padding="4, 2" />
+            </StackPanel>
+           
 
         </Grid>
 

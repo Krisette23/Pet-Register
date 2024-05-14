@@ -5,8 +5,8 @@ namespace Petclass
     public class Pet
     {
         public string petID { get; set; }
-        public  string petName { get; set; }  
-        public PetBreed petBreed { get; set; }
+        public  string petBreed { get; set; }  
+        public PetType petType { get; set; }
         public  string petDescription { get; set; }
 
         public Pet()
@@ -14,7 +14,7 @@ namespace Petclass
 
         }
       
-        public enum PetBreed
+        public enum PetType
         {
             Dog,
             Cat,
