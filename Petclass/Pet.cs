@@ -1,8 +1,9 @@
-﻿using System.Diagnostics;
+﻿using System.ComponentModel;
+using System.Diagnostics;
 
 namespace Petclass
 {
-    public class Pet
+    public class Pet :INotifyPropertyChanged
     {
         public string petID { get; set; }
         public  string petBreed { get; set; }  
@@ -29,5 +30,7 @@ namespace Petclass
             Snake,
             Spider
         }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
     }
 }

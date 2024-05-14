@@ -62,7 +62,7 @@
             <TextBox HorizontalAlignment ="Center" Grid.Row ="1"  Grid.Column="0" FontSize="15" Height="20"  Width="67" Text="{Binding Path= petID}" />
 
             <Label  HorizontalAlignment ="Center"  Grid.Row ="2" Grid.Column="0" FontSize="15"  Content="Type"/>
-            <ComboBox HorizontalAlignment ="Center"  Grid.Row ="3"  Grid.Column="0"  FontSize="15" Height="20"  Width="67" Text="{Binding petType}"/>
+            <ComboBox ItemsSource="{Binding petType}" DisplayMemberPath="petType" HorizontalAlignment ="Center"  Grid.Row ="3"  Grid.Column="0"  FontSize="15" Height="20"  Width="67" />
 
             <Label HorizontalAlignment ="Center" Grid.Row ="4" Grid.Column="0" FontSize="15"   Content="Race"/>
             <TextBox  HorizontalAlignment ="Center" Grid.Row ="5" Grid.Column="0" FontSize="15" Height="20"  Width="67"  Text="{Binding petBreed}"/>
