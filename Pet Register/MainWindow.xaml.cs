@@ -1,4 +1,5 @@
 ﻿using Petclass;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,7 +18,7 @@ namespace Pet_Register
     /// </summary>
     public partial class MainWindow : Window
     {
-        readonly IList<Pet> pets = new List<Pet>();
+        readonly IList<Pet> pets = new ObservableCollection<Pet>();
         public MainWindow()
         {
             InitializeComponent();
@@ -31,6 +32,11 @@ namespace Pet_Register
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Pet_Click(object sender, RoutedEventArgs e)
         {
 
         }
