@@ -29,8 +29,8 @@ namespace Pet_Register
             // Set the ItemsSource of the ComboBox
             comboBoxPetTypes.ItemsSource = petTypes;
 
-            // Set default selected item
-            comboBoxPetTypes.SelectedIndex = 0;
+            //// Set default selected item
+            //comboBoxPetTypes.SelectedIndex = 0;
         }
 
     
