@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static Petclass.Pet;
 
 namespace Pet_Register
 {
@@ -22,6 +23,14 @@ namespace Pet_Register
         public MainWindow()
         {
             InitializeComponent();
+            // Convert enum values to list of strings
+            List<string> petTypes = Enum.GetNames(typeof(PetType)).ToList();
+
+            // Set the ItemsSource of the ComboBox
+            comboBoxPetTypes.ItemsSource = petTypes;
+
+            // Set default selected item
+            comboBoxPetTypes.SelectedIndex = 0;
         }
 
     
