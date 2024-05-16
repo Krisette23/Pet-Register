@@ -29,11 +29,20 @@ namespace Pet_Register
             // Set the ItemsSource of the ComboBox
             comboBoxPetTypes.ItemsSource = petTypes;
 
-            //// Set default selected item
-            //comboBoxPetTypes.SelectedIndex = 0;
+      
         }
 
-    
+        private ICommand _addPetCommand = null;
+        public ICommand AddPetCmd
+        {
+            get
+            {
+                if (_addPetCommand == null)
+                    _addPetCommand = new AddPetCommand();
+                return _addPetCommand;
+            }
+
+        }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
