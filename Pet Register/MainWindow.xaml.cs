@@ -43,7 +43,7 @@ namespace Pet_Register
         }
 
         private void btnAdd_Pet_Click(object sender, RoutedEventArgs e)
-        //{
+        {
         //    pets.Add(new Pet()  );
         }
     }
