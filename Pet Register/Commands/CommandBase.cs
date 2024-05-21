@@ -1,24 +1,16 @@
-﻿using Petclass;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 
 namespace Pet_Register.Commands
 {
-    public class CommandBase : ICommand
+    public abstract class  CommandBase : ICommand
     {
+        public abstract bool CanExecute(object parameter);
+        public abstract void Execute(object parameter);
+
         public event EventHandler CanExecuteChanged
         {
             add => CommandManager.RequerySuggested += value;
             remove => CommandManager.RequerySuggested -= value;
         }
-
-        public abstract bool CanExecute(object? parameter);
-
-        public void Execute(object? parameter);
     }
 }

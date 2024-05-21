@@ -32,17 +32,7 @@ namespace Pet_Register
       
         }
 
-        private ICommand _addPetCommand = null;
-        public ICommand AddPetCmd
-        {
-            get
-            {
-                if (_addPetCommand == null)
-                    _addPetCommand = new AddPetCommand();
-                return _addPetCommand;
-            }
-
-        }
+  
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
