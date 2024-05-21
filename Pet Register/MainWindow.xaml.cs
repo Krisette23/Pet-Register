@@ -1,4 +1,5 @@
-﻿using Petclass;
+﻿using Pet_Register.ViewModels;
+using Petclass;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
@@ -19,15 +20,12 @@ namespace Pet_Register
     /// </summary>
     public partial class MainWindow : Window
     {
-        readonly IList<Pet> pets = new ObservableCollection<Pet>();
+        public RegistrationWindow ViewModel { get; private set; } = new RegistrationWindow();
+
         public MainWindow()
         {
             InitializeComponent();
-            // Convert enum values to list of strings
-            List<string> petTypes = Enum.GetNames(typeof(PetType)).ToList();
-
-            // Set the ItemsSource of the ComboBox
-            comboBoxPetTypes.ItemsSource = petTypes;
+          
 
       
         }
@@ -45,8 +43,8 @@ namespace Pet_Register
         }
 
         private void btnAdd_Pet_Click(object sender, RoutedEventArgs e)
-        {
-            pets.Add(new Pet()  );
+        //{
+        //    pets.Add(new Pet()  );
         }
     }
 }
