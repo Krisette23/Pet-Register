@@ -24,27 +24,16 @@ namespace Pet_Register
 
         public MainWindow()
         {
+            DataContext = ViewModel;
             InitializeComponent();
-          
 
-      
-        }
 
-  
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
 
         }
 
-        private void btnAdd_Pet_Click(object sender, RoutedEventArgs e)
-        {
-        //    pets.Add(new Pet()  );
-        }
+
+
+
     }
+        
 }

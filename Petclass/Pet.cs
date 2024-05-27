@@ -9,6 +9,8 @@ namespace Petclass
         public  string petBreed { get; set; }  
         public PetType petType { get; set; }
         public  string petDescription { get; set; }
+        public PetType Type { get; set; }
+        public string PetID { get; set; }
 
         public Pet()
         {
@@ -18,17 +20,7 @@ namespace Petclass
         public enum PetType
         {
             Dog,
-            Cat,
-            Bird,
-            Fish,
-            Rabbit,
-            Hamster,
-            GuineaPig,
-            Ferret,
-            Turtle,
-            Lizard,
-            Snake,
-            Spider
+            Cat
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
