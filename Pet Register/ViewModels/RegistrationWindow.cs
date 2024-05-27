@@ -23,10 +23,6 @@ namespace Pet_Register.ViewModels
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        //private void MenuItem_Click(object sender, RoutedEventArgs e)
-        //{
-        //    this.Close();
-        //}
 
 
         public bool CanAddPet()
@@ -70,5 +66,15 @@ namespace Pet_Register.ViewModels
             PetTypes = new ObservableCollection<string>(Enum.GetNames(typeof(PetType)).ToList());
             AddPetCmd = new RelayCommand(AddPet, CanAddPet);   
         }
+
+
+        //Commands 
+
+        public ICommand ExitApplicationCommand { get; set; }
+        private void ExitApplication()
+        {
+            App.Current.Shutdown();
+        }
+
     }
 }

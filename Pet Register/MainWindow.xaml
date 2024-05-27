@@ -9,13 +9,13 @@
         Title="PetRegister" Height="350" Width="600">
 
     <Window.DataContext>
-        <vm:/>
+        <vm:RegistrationWindow/>
     </Window.DataContext>
 
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
-                <MenuItem Header="Exit" Click ="MenuItem_Click"/>
+                <MenuItem Header="Exit" Command="{Binding ExitCommand}"/>
             </MenuItem>
             <MenuItem Header="HostName"/>
         </Menu>
