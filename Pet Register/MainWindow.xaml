@@ -22,7 +22,7 @@
         <!-- Status Bar -->
         <StatusBar DockPanel.Dock="Bottom" Background="AliceBlue">
             <StatusBarItem>
-                <TextBlock Name="StatBarText" Text="Ready"/>
+                <TextBlock Name="StatBarText"  Text="{Binding StatusMessage}"/>
             </StatusBarItem>
         </StatusBar>
 
@@ -68,7 +68,7 @@
             <TextBox HorizontalAlignment ="Center" Grid.Row ="1"  Grid.Column="0" FontSize="15" Height="20"  Width="67" Text="{Binding Path= petID}" />
 
             <Label  HorizontalAlignment ="Center"  Grid.Row ="2" Grid.Column="0" FontSize="15"  Content="Type"/>
-            <ComboBox x:Name ="comboBoxPetTypes"  HorizontalAlignment ="Center"  Grid.Row ="3"  Grid.Column="0"  FontSize="15" Height="20"  Width="67"  />
+            <ComboBox ItemsSource="{Binding PetTypes}" SelectedItem="{Binding SelectedPetType}" x:Name ="comboBoxPetTypes"  HorizontalAlignment ="Center"  Grid.Row ="3"  Grid.Column="0"  FontSize="15" Height="20"  Width="67"  />
 
             <Label HorizontalAlignment ="Center" Grid.Row ="4" Grid.Column="0" FontSize="15"   Content="Race"/>
             <TextBox  HorizontalAlignment ="Center" Grid.Row ="5" Grid.Column="0" FontSize="15" Height="20"  Width="67"  Text="{Binding petBreed}"/>
@@ -77,12 +77,20 @@
             <TextBox  HorizontalAlignment ="Center" Grid.Row ="7"  Grid.Column="0"  FontSize="15" Height="20"  Width="67" />
 
             <StackPanel Grid.Row="8" HorizontalAlignment="Right" Orientation="Horizontal">
-                <Button x:Name  ="btnAdd_Pet" HorizontalAlignment="Center" Grid.Row="9" FontSize="15" Content="Save" Margin="5,0,5,0" Padding="4, 2" Command="{Binding Path = AddPetCmd }" />
+                <Button x:Name  ="btnAdd_Pet" HorizontalAlignment="Center" Grid.Row="9" FontSize="15" Content="Save" Margin="5,0,5,0" Padding="4, 2" Command="{Binding Path = AddPetCmd}" />
             </StackPanel>
            
 
         </Grid>
-
+        <!-- ListView to display the list of pets --><!--
+        <ListView ItemsSource="{Binding Pets}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,70,0,0" Width="200" Height="200">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="100"/>
+                    <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Type}" Width="100"/>
+                </GridView>
+            </ListView.View>
+        </ListView>-->
 
     </DockPanel>
 

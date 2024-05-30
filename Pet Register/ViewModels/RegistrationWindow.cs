@@ -21,9 +21,12 @@ namespace Pet_Register.ViewModels
    
         public ICommand AddPetCmd { get; set; }
 
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-
+    
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         public bool CanAddPet()
         {
@@ -44,19 +47,37 @@ namespace Pet_Register.ViewModels
         public string _selectedPetType;
         public string SelectedPetType
         {
-            get => _selectedPetType;
+            get { return _selectedPetType; }
             set
             {
                 _selectedPetType = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedPetType)));
+                OnPropertyChanged();
             }
 
         }
-
+        private string _statusMessage;
+        public string StatusMessage
+        {
+            get => _statusMessage;
+            set
+            {
+                _statusMessage = value;
+                OnPropertyChanged();
+        }
         private void AddPet()
         {
+            if (!string.IsNullOrWhiteSpace(SelectedPetType))
+            { 
+                SelectedPet.Type = (PetType)Enum.Parse(typeof(PetType), SelectedPetType);
+                StatusMessage = "Pet added successfully";
+            }
 
-            Pets.Add(new Pet { PetID = SelectedPet.petID, Type = (PetType)Enum.Parse(typeof(PetType), SelectedPetType) });
+            else
+            {
+                StatusMessage = "Please select a pet type";
+            }
+                /*Pets.Add(new Pet { PetID = SelectedPet.petID, Type = (PetType)Enum.Parse(typeof(PetType), SelectedPetType) })*/;
+            StatusMessage = "Pet added successfully";
         }
 
         public RegistrationWindow()
@@ -64,7 +85,8 @@ namespace Pet_Register.ViewModels
 
             Pets = new ObservableCollection<Pet>();
             PetTypes = new ObservableCollection<string>(Enum.GetNames(typeof(PetType)).ToList());
-            AddPetCmd = new RelayCommand(AddPet, CanAddPet);   
+            AddPetCmd = new RelayCommand(AddPet, CanAddPet);
+            ExitApplicationCommand = new RelayCommand(ExitApplication);
         }
 
 
