@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pet Register", "Pet Registe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petclass", "Petclass\Petclass.csproj", "{D111D3D5-2A53-4261-8EF2-3B8D0AC60C99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{C4039771-1F4D-4B85-AE9F-C0960738287B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetServer", "Server\PetServer.csproj", "{C4039771-1F4D-4B85-AE9F-C0960738287B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
