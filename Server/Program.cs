@@ -13,7 +13,7 @@ namespace PetServer
         {
             ConnectionHandler connectionHandler = new ConnectionHandler();
             PetRepository petRepository = new PetRepository();
-            //connectionHandler.Run();
+            connectionHandler.Run();
         }
     }
 }
